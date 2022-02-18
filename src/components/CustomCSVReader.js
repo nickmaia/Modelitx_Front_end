@@ -2,7 +2,9 @@ import { useContext } from "react";
 import { FaTimes, FaUpload } from "react-icons/fa";
 import { useCSVReader } from 'react-papaparse';
 import { GraphContext } from "../App";
-import { createLinearModel } from "../utils/createModels";
+import {
+  createLinearModel
+} from "../utils/createModels";
 import { formatCSVdata, formatGraphData } from "../utils/formatters";
 
 
@@ -53,7 +55,8 @@ const styles = {
 const CustomCSVReader = () => {
 
   const { CSVReader } = useCSVReader();
-  const { setGraphData, setGraphFormulae } = useContext(GraphContext);
+  const { setGraphData, setGraphFormulae, graphType } = useContext(GraphContext);
+
 
   return (
     <CSVReader
@@ -63,8 +66,27 @@ const CustomCSVReader = () => {
         const graphData = formatGraphData(tidyingUpGraphData);
         setGraphData(graphData)
 
-        const graphFormulae = createLinearModel(results.data);
-        setGraphFormulae(graphFormulae);
+
+        if (graphType === 'Linear') {
+          const graphFormulae = createLinearModel(results.data);
+          setGraphFormulae(graphFormulae);
+        }
+
+        if (graphType === 'Exponencial') {
+          const graphFormulae = createExponencialModel(results.data);
+          setGraphFormulae(graphFormulae);
+        }
+
+        if (graphType === 'Sigmoid') {
+          const graphFormulae = createSigmoidModel(results.data);
+          setGraphFormulae(graphFormulae);
+        }
+
+        if (graphType === 'Normal') {
+          const graphFormulae = createNormalModel(results.data);
+          setGraphFormulae(graphFormulae);
+        }
+
 
       }}
     >

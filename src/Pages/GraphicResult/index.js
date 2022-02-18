@@ -18,8 +18,12 @@ import CustomButton from '../../components/CustomButton';
 import RightImage from '../../components/RightImage';
 import { useContext } from 'react';
 import { GraphContext } from '../../App';
-import { createLinearModel } from '../../utils/createModels';
-import { createLinearFormulae } from '../../utils/createFormulae';
+import {
+    createLinearModel
+} from '../../utils/createModels';
+import {
+    createLinearFormulae
+} from '../../utils/createFormulae';
 import BigText from '../../components/BigText';
 import SmallText from '../../components/SmallText';
 
@@ -34,6 +38,18 @@ const GraphicResult = () => {
     if (graphType === 'Linear') {
         const { a, b } = createLinearModel(graphFormulae);
         formulae = createLinearFormulae(a, b);
+    }
+    if (graphType === 'Exponencial') {
+        const { b, a } = createExponencialModel(graphFormulae);
+        formulae = createExponencialFormulae(b, a);
+
+    } if (graphType === 'Sigmoid') {
+        const { a, b } = createSigmoidModel(graphFormulae);
+        formulae = createSigmoidFormulae(a, b);
+
+    } if (graphType === 'Normal') {
+        const { a, b } = createNormalModel(graphFormulae);
+        formulae = createNormalFormulae(a, b);
     }
 
     return (
