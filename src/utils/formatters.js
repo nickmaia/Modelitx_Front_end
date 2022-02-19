@@ -1,19 +1,20 @@
 export const formatCSVdata = (data) => {
 
-  const tidyingUpGraphData = data.slice(1,).map(
+  const firstGraphData = data.slice(1,).map(
     row => ({ x: Number(row[0]), y: Number(row[1]) })
   )
 
-  return tidyingUpGraphData;
+  return firstGraphData;
 
 }
 
-export const formatGraphData = (tidyingUpGraphData) => {
+export const formatGraphData = (firstGraphData, secondGraphData) => {
 
   let dataUm = [];
   let dataDois = [];
 
-  dataUm = tidyingUpGraphData;
+  dataUm = firstGraphData;
+  dataDois = secondGraphData;
 
   return {
     options: {

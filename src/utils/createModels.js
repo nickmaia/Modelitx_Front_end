@@ -1,35 +1,9 @@
 export const createLinearModel = (data) => {
-  const lodash = require('lodash');
-
-  //xData em array [1,2,3,4]
-  let xData = data.slice(1,).map(
-    row => (Number(row[0]))
-  );
-  let yData = data.slice(1,).map(
-    row => (Number(row[1]))
-  );
-
-  //Media 
-  let mediaX = lodash.mean(xData);
-  let mediaY = lodash.mean(yData);
-
-  //Sxy em array [1,2,3,4]
-  let Sxy = data.slice(1,).map(
-    row => ((Number(row[0]) - mediaX) * (Number(row[1])))
-  );
-
-  let Sxx = data.slice(1,).map(
-    row => ((Number(row[0]) - mediaX) ** 2)
-  );
-
-  //Calculando b
-  let bLinear = lodash.sum(Sxy) / lodash.sum(Sxx);
-
-  //Calculando a
-  let aLinear = mediaY - (bLinear * mediaX);
+  let xData = data.map(row => (Number(row.x)));
+  console.log(xData);
 
   return (
-    { a: aLinear, b: bLinear }
+    { a: 1, b: 1 }
   );
 }
 

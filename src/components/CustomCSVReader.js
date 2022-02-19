@@ -5,6 +5,8 @@ import { GraphContext } from "../App";
 import {
   createLinearModel
 } from "../utils/createModels";
+import { createLinearFormulae } from "../utils/createFormulae"
+import { linearRegression } from "../utils/createRegression";
 import { formatCSVdata, formatGraphData } from "../utils/formatters";
 
 
@@ -55,38 +57,45 @@ const styles = {
 const CustomCSVReader = () => {
 
   const { CSVReader } = useCSVReader();
-  const { setGraphData, setGraphFormulae, graphType } = useContext(GraphContext);
+  const { setGraphData, setGraphFormulae } = useContext(GraphContext);
 
 
   return (
     <CSVReader
+
+      //coleta dados
       onUploadAccepted={(results) => {
 
-        const tidyingUpGraphData = formatCSVdata(results.data);
-        const graphData = formatGraphData(tidyingUpGraphData);
+        //transforma firstGraphData
+        const firstGraphData = formatCSVdata(results.data);
+
+        //coleta a,b
+        const graphFormulae = createLinearModel(firstGraphData);
+        const { a, b } = createLinearModel(graphFormulae);
+        const formulae = createLinearFormulae(a, b);
+
+        //Regressão 
+        const secondGraphData = linearRegression(firstGraphData, a, b);
+
+        //Atualiza graphData
+        const graphData = formatGraphData(firstGraphData, secondGraphData);
         setGraphData(graphData)
 
+        //Atualiza graphFormulae
+        setGraphFormulae(formulae);
 
-        if (graphType === 'Linear') {
-          const graphFormulae = createLinearModel(results.data);
-          setGraphFormulae(graphFormulae);
-        }
 
-        if (graphType === 'Exponencial') {
-          const graphFormulae = createExponencialModel(results.data);
-          setGraphFormulae(graphFormulae);
-        }
 
-        if (graphType === 'Sigmoid') {
-          const graphFormulae = createSigmoidModel(results.data);
-          setGraphFormulae(graphFormulae);
-        }
 
-        if (graphType === 'Normal') {
-          const graphFormulae = createNormalModel(results.data);
-          setGraphFormulae(graphFormulae);
-        }
 
+        /*
+                  const { a, b } = createLinearModel(graphFormulae);
+                  formulae = createLinearFormulae(a, b);
+                  const graphFormulae = createLinearModel(results.data);
+                  setGraphFormulae(graphFormulae);
+             
+        
+        */
 
       }}
     >
