@@ -1,8 +1,9 @@
-export const linearRegression = (data) => {
+export const linearRegression = (firstGraphData, a, b) => {
 
-    const secondGraphData = data.slice(1,).map(
-        row => ({ x: Number(row[0]), y: Number(row[1]) })
-    )
+    const secondGraphData =
+        firstGraphData.map(
+            row => ({ x: (row.x), y: (row.y) })
+        )
 
     return secondGraphData;
 

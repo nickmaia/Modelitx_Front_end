@@ -72,7 +72,6 @@ const CustomCSVReader = () => {
         //coleta a,b
         const graphFormulae = createLinearModel(firstGraphData);
         const { a, b } = createLinearModel(graphFormulae);
-        const formulae = createLinearFormulae(a, b);
 
         //Regressão 
         const secondGraphData = linearRegression(firstGraphData, a, b);
@@ -82,6 +81,7 @@ const CustomCSVReader = () => {
         setGraphData(graphData)
 
         //Atualiza graphFormulae
+        const formulae = createLinearFormulae(a, b);
         setGraphFormulae(formulae);
 
 
