@@ -1,26 +1,26 @@
 export const formatCSVdata = (data) => {
 
-  const firstGraphData = data.slice(1,).map(
+  const firstDataSerie = data.slice(1,).map(
     row => ({ x: Number(row[0]), y: Number(row[1]) })
   )
 
-  return firstGraphData;
+  return firstDataSerie;
 
 }
 
-export const formatGraphData = (firstGraphData, secondGraphData) => {
-
-  let dataUm = [];
-  let dataDois = [];
-
-  dataUm = firstGraphData;
-  dataDois = secondGraphData;
+export const formatGraphData = (firstDataSerie, secondDataSerie) => {
 
   return {
     options: {
       chart: {
         height: '100%'
 
+      },
+      yaxis: {
+        labels: {
+          show: true,
+          formatter: (val) => Number(val).toFixed(2)
+        }
       },
       xaxis: {
         type: 'numeric',
@@ -45,12 +45,12 @@ export const formatGraphData = (firstGraphData, secondGraphData) => {
       {
         name: 'Points',
         type: 'scatter',
-        data: dataUm,
+        data: firstDataSerie,
       },
       {
         name: 'Line',
         type: 'line',
-        data: dataDois,
+        data: secondDataSerie,
       }
     ]
   }

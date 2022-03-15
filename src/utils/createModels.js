@@ -1,33 +1,114 @@
-export const createLinearModel = (firstGraphData) => {
+import axios from "axios";
 
-  //Calculando b
-  let bLinear = 1;
+export const createLinearModel = async (firstDataSerie) => {
 
-  //Calculando a
-  let aLinear = 1;
+  const x = Object.values(firstDataSerie).map(row => Number(row.x));
+  const y = Object.values(firstDataSerie).map(row => Number(row.y));
+
+  try {
+    const response = await axios.post(
+      "https://modelitx.herokuapp.com/api/linear",
+      { x, y }
+    )
+
+    const {
+      a: aLinear,
+      b: bLinear,
+      x_array,
+      y_array
+    } = await response.data;
+
+    return (
+      {
+        a: aLinear,
+        b: bLinear,
+        xArray: x_array,
+        yArray: y_array
+      }
+    );
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export const createExponencialModel = async (firstDataSerie) => {
+
+  const x = Object.values(firstDataSerie).map(row => Number(row.x));
+  const y = Object.values(firstDataSerie).map(row => Number(row.y));
+
+  const response = await axios.post(
+    "https://modelitx.herokuapp.com/api/exponencial",
+    { x, y }
+  )
+
+  const {
+    a: aExponencial,
+    b: bExponencial,
+    x_array, y_array
+  } = await response.data;
 
   return (
-    { a: aLinear, b: bLinear }
+    {
+      a: aExponencial,
+      b: bExponencial,
+      xArray: x_array,
+      yArray: y_array
+    }
   );
 }
 
-export const createExponencialModel = (data) => {
+export const createSigmoidModel = async (firstDataSerie) => {
+  const x = Object.values(firstDataSerie).map(row => Number(row.x));
+  const y = Object.values(firstDataSerie).map(row => Number(row.y));
+
+  const response = await axios.post(
+    "https://modelitx.herokuapp.com/api/sigmoid",
+    { x, y }
+  )
+
+  const {
+    a: aSigmoid,
+    b: bSigmoid,
+    c: cSigmoid,
+    d: dSigmoid,
+    x_array, y_array
+  } = await response.data;
 
   return (
-    { b: 10, a: 12 }
+    {
+      a: aSigmoid,
+      b: bSigmoid,
+      c: cSigmoid,
+      d: dSigmoid,
+      xArray: x_array,
+      yArray: y_array
+    }
   );
 }
 
-export const createSigmoidModel = (data) => {
-  let aSigmoid = 5;
-  let bSigmoid = 9;
-  return (
-    { a: aSigmoid, b: bSigmoid }
-  );
-}
+export const createNormalModel = async (firstDataSerie) => {
+  const x = Object.values(firstDataSerie).map(row => Number(row.x));
+  const y = Object.values(firstDataSerie).map(row => Number(row.y));
 
-export const createNormalModel = (data) => {
+  const response = await axios.post(
+    "https://modelitx.herokuapp.com/api/normal",
+    { x, y }
+  )
+
+  const {
+    a: aNormal,
+    b: bNormal,
+    c: cNormal,
+    x_array, y_array
+  } = await response.data;
+
   return (
-    { a: 1, b: 1 }
+    {
+      a: aNormal,
+      b: bNormal,
+      c: cNormal,
+      xArray: x_array,
+      yArray: y_array
+    }
   );
 }

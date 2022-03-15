@@ -23,12 +23,6 @@ function App() {
   const [graphType, setGraphType] = useState(null);
   const [graphFormulae, setGraphFormulae] = useState(null);
 
-
-
-  console.log('graphData', graphData)
-  console.log('graphType', graphType)
-  console.log('graphFormulae', graphFormulae)
-
   return (
     <Router>
       <ChakraProvider>

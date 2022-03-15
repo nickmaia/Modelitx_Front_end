@@ -2,11 +2,19 @@ import { useContext } from "react";
 import { FaTimes, FaUpload } from "react-icons/fa";
 import { useCSVReader } from 'react-papaparse';
 import { GraphContext } from "../App";
+import { createFittingData } from "../utils/createFittingData";
 import {
-  createLinearModel
+  createExponencialModel,
+  createLinearModel,
+  createNormalModel,
+  createSigmoidModel
 } from "../utils/createModels";
-import { createLinearFormulae } from "../utils/createFormulae"
-import { linearRegression } from "../utils/createRegression";
+import {
+  createExponencialFormulae,
+  createLinearFormulae,
+  createNormalFormulae,
+  createSigmoidFormulae
+} from "../utils/createFormulae"
 import { formatCSVdata, formatGraphData } from "../utils/formatters";
 
 
@@ -57,45 +65,96 @@ const styles = {
 const CustomCSVReader = () => {
 
   const { CSVReader } = useCSVReader();
-  const { setGraphData, setGraphFormulae } = useContext(GraphContext);
+  const { setGraphData, setGraphFormulae, graphType } = useContext(GraphContext);
 
 
   return (
     <CSVReader
 
-      //coleta dados
-      onUploadAccepted={(results) => {
+      // carrega os dados do csv
+      onUploadAccepted={async (results) => {
 
-        //transforma firstGraphData
-        const firstGraphData = formatCSVdata(results.data);
+        //Tratando erros de linha em branco
+        let n = results.data.length - 1;
+        while (results.data[n].includes('') === true) {
+          results.data.splice(results.data.indexOf(n), 1);
+          n--;
+        }
 
-        //coleta a,b
-        const graphFormulae = createLinearModel(firstGraphData);
-        const { a, b } = createLinearModel(graphFormulae);
-
-        //Regressão 
-        const secondGraphData = linearRegression(firstGraphData, a, b);
-
-        //Atualiza graphData
-        const graphData = formatGraphData(firstGraphData, secondGraphData);
-        setGraphData(graphData)
-
-        //Atualiza graphFormulae
-        const formulae = createLinearFormulae(a, b);
-        setGraphFormulae(formulae);
+        // encontra a primeira série
+        const firstDataSerie = formatCSVdata(results.data);
 
 
+        if (graphType === "Linear") {
 
+          //coleta a,b
+          const { a, b, xArray, yArray } = await createLinearModel(firstDataSerie);
+          // encontra a segunda série
+          const secondDataSerie = createFittingData(xArray, yArray);
 
+          // cria os object graphData -> data: data1, data: data2
+          const graphData = formatGraphData(firstDataSerie, secondDataSerie);
+          setGraphData(graphData)
 
-        /*
-                  const { a, b } = createLinearModel(graphFormulae);
-                  formulae = createLinearFormulae(a, b);
-                  const graphFormulae = createLinearModel(results.data);
-                  setGraphFormulae(graphFormulae);
-             
-        
-        */
+          //Atualiza graphFormulae
+          const formulae = createLinearFormulae(a, b);
+          setGraphFormulae(formulae);
+
+        }
+
+        if (graphType === "Exponencial") {
+
+          //coleta a,b
+          const { a, b, xArray, yArray } = await createExponencialModel(firstDataSerie);
+
+          // encontra a segunda série
+          const secondDataSerie = createFittingData(xArray, yArray);
+
+          // cria os object graphData -> data: data1, data: data2
+          const graphData = formatGraphData(firstDataSerie, secondDataSerie);
+          setGraphData(graphData)
+
+          //Atualiza graphFormulae
+          const formulae = createExponencialFormulae(a, b);
+          setGraphFormulae(formulae);
+
+        }
+
+        if (graphType === "Sigmoid") {
+
+          //coleta a,b
+          const { a, b, c, d, xArray, yArray } = await createSigmoidModel(firstDataSerie);
+
+          // encontra a segunda série
+          const secondDataSerie = createFittingData(xArray, yArray);
+
+          // cria os object graphData -> data: data1, data: data2
+          const graphData = formatGraphData(firstDataSerie, secondDataSerie);
+          setGraphData(graphData)
+
+          //Atualiza graphFormulae
+          const formulae = createSigmoidFormulae(a, b, c, d);
+          setGraphFormulae(formulae);
+
+        }
+
+        if (graphType === "Normal") {
+
+          //coleta a,b
+          const { a, b, c, xArray, yArray } = await createNormalModel(firstDataSerie);
+
+          // encontra a segunda série
+          const secondDataSerie = createFittingData(xArray, yArray);
+
+          // cria os object graphData -> data: data1, data: data2
+          const graphData = formatGraphData(firstDataSerie, secondDataSerie);
+          setGraphData(graphData)
+
+          //Atualiza graphFormulae
+          const formulae = createNormalFormulae(a, b, c);
+          setGraphFormulae(formulae);
+
+        }
 
       }}
     >

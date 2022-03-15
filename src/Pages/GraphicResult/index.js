@@ -11,7 +11,7 @@ import {
 import MathJax from 'react-mathjax';
 
 //Gráfico
-import Grafico from "./Grafico";
+import Grafico from "../../components/Grafico";
 
 // components
 import CustomButton from '../../components/CustomButton';
@@ -66,7 +66,7 @@ const GraphicResult = () => {
                                     fontSize={'2xl'}
                                     fontWeight={'medium'}
                                 >
-                                    F(x)= <MathJax.Node inline formula={formulae} />
+                                    <MathJax.Node inline formula={formulae} />
                                 </Text>
 
 

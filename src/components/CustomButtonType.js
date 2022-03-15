@@ -2,12 +2,12 @@ import { useContext } from 'react';
 import { Image, Button } from '@chakra-ui/react';
 import { GraphContext } from '../App';
 
-const CustomButtonType = ({ 
-    typeimage, 
+const CustomButtonType = ({
+    typeimage,
     type
 }) => {
 
-    const {graphType, setGraphType} = useContext(GraphContext)
+    const { graphType, setGraphType } = useContext(GraphContext)
 
     return (
 
@@ -25,6 +25,8 @@ const CustomButtonType = ({
                 src={typeimage}
                 alt={type}
             />
+
+
 
         </Button >
     );
