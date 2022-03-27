@@ -88,16 +88,16 @@ const CustomCSVReader = () => {
         if (graphType === "Linear") {
 
           //coleta a,b
-          const { a, b, xArray, yArray } = await createLinearModel(firstDataSerie);
+          let { a, b, xArray, yArray } = await createLinearModel(firstDataSerie);
           // encontra a segunda série
-          const secondDataSerie = createFittingData(xArray, yArray);
+          let secondDataSerie = createFittingData(xArray, yArray);
 
           // cria os object graphData -> data: data1, data: data2
-          const graphData = formatGraphData(firstDataSerie, secondDataSerie);
+          let graphData = formatGraphData(firstDataSerie, secondDataSerie);
           setGraphData(graphData)
 
           //Atualiza graphFormulae
-          const formulae = createLinearFormulae(a, b);
+          let formulae = createLinearFormulae(a, b);
           setGraphFormulae(formulae);
 
         }
@@ -105,17 +105,17 @@ const CustomCSVReader = () => {
         if (graphType === "Exponencial") {
 
           //coleta a,b
-          const { a, b, xArray, yArray } = await createExponencialModel(firstDataSerie);
+          let { a, b, xArray, yArray } = await createExponencialModel(firstDataSerie);
 
           // encontra a segunda série
-          const secondDataSerie = createFittingData(xArray, yArray);
+          let secondDataSerie = createFittingData(xArray, yArray);
 
           // cria os object graphData -> data: data1, data: data2
-          const graphData = formatGraphData(firstDataSerie, secondDataSerie);
+          let graphData = formatGraphData(firstDataSerie, secondDataSerie);
           setGraphData(graphData)
 
           //Atualiza graphFormulae
-          const formulae = createExponencialFormulae(a, b);
+          let formulae = createExponencialFormulae(a, b);
           setGraphFormulae(formulae);
 
         }
@@ -123,17 +123,17 @@ const CustomCSVReader = () => {
         if (graphType === "Sigmoid") {
 
           //coleta a,b
-          const { a, b, c, d, xArray, yArray } = await createSigmoidModel(firstDataSerie);
+          let { a, b, c, d, xArray, yArray } = await createSigmoidModel(firstDataSerie);
 
           // encontra a segunda série
-          const secondDataSerie = createFittingData(xArray, yArray);
+          let secondDataSerie = createFittingData(xArray, yArray);
 
           // cria os object graphData -> data: data1, data: data2
-          const graphData = formatGraphData(firstDataSerie, secondDataSerie);
+          let graphData = formatGraphData(firstDataSerie, secondDataSerie);
           setGraphData(graphData)
 
           //Atualiza graphFormulae
-          const formulae = createSigmoidFormulae(a, b, c, d);
+          let formulae = createSigmoidFormulae(a, b, c, d);
           setGraphFormulae(formulae);
 
         }
@@ -141,17 +141,17 @@ const CustomCSVReader = () => {
         if (graphType === "Normal") {
 
           //coleta a,b
-          const { a, b, c, xArray, yArray } = await createNormalModel(firstDataSerie);
+          let { a, b, c, xArray, yArray } = await createNormalModel(firstDataSerie);
 
           // encontra a segunda série
-          const secondDataSerie = createFittingData(xArray, yArray);
+          let secondDataSerie = createFittingData(xArray, yArray);
 
           // cria os object graphData -> data: data1, data: data2
-          const graphData = formatGraphData(firstDataSerie, secondDataSerie);
+          let graphData = formatGraphData(firstDataSerie, secondDataSerie);
           setGraphData(graphData)
 
           //Atualiza graphFormulae
-          const formulae = createNormalFormulae(a, b, c);
+          let formulae = createNormalFormulae(a, b, c);
           setGraphFormulae(formulae);
 
         }

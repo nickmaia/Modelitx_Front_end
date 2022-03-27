@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const createLinearModel = async (firstDataSerie) => {
+export let createLinearModel = async (firstDataSerie) => {
 
   const x = Object.values(firstDataSerie).map(row => Number(row.x));
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
@@ -31,7 +31,7 @@ export const createLinearModel = async (firstDataSerie) => {
   }
 }
 
-export const createExponencialModel = async (firstDataSerie) => {
+export let createExponencialModel = async (firstDataSerie) => {
 
   const x = Object.values(firstDataSerie).map(row => Number(row.x));
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
@@ -57,7 +57,7 @@ export const createExponencialModel = async (firstDataSerie) => {
   );
 }
 
-export const createSigmoidModel = async (firstDataSerie) => {
+export let createSigmoidModel = async (firstDataSerie) => {
   const x = Object.values(firstDataSerie).map(row => Number(row.x));
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
 
@@ -86,7 +86,7 @@ export const createSigmoidModel = async (firstDataSerie) => {
   );
 }
 
-export const createNormalModel = async (firstDataSerie) => {
+export let createNormalModel = async (firstDataSerie) => {
   const x = Object.values(firstDataSerie).map(row => Number(row.x));
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
 

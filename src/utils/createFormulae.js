@@ -3,7 +3,7 @@ export let createLinearFormulae = (a, b) => {
 }
 
 export let createExponencialFormulae = (a, b) => {
-  return `f(x)= ${a.toFixed(2)}exp^{(${b.toFixed(2)}X)}`;
+  return `f(x)= ${a.toFixed(2)}e^{(${b.toFixed(2)}x)}`;
 }
 
 export let createSigmoidFormulae = (a, b, c, d) => {
