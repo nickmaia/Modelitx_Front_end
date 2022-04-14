@@ -74,12 +74,14 @@ const CustomCSVReader = () => {
       // carrega os dados do csv
       onUploadAccepted={async (results) => {
 
+
         //Tratando erros de linha em branco
         let n = results.data.length - 1;
         while (results.data[n].includes('') === true) {
           results.data.splice(results.data.indexOf(n), 1);
           n--;
         }
+
 
         // encontra a primeira série
         const firstDataSerie = formatCSVdata(results.data);
