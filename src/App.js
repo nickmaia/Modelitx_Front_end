@@ -23,9 +23,6 @@ function App() {
   const [graphType, setGraphType] = useState(null);
   const [graphFormulae, setGraphFormulae] = useState(null);
 
-  console.log("Data", graphData);
-  console.log("Type", graphType);
-  console.log("Formulae", graphFormulae);
 
   return (
     <Router>
