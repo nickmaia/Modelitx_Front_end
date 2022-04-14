@@ -1,5 +1,9 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import React, { createContext } from "react";
+import {
+  ChakraProvider
+} from '@chakra-ui/react';
+import React, {
+  createContext
+} from "react";
 
 import {
   BrowserRouter as Router,
@@ -7,7 +11,9 @@ import {
   Route,
 } from "react-router-dom";
 
-import { useState } from 'react';
+import {
+  useState
+} from 'react';
 import HeroPage from './Pages/HeroPage';
 import UploadFilePage from './Pages/UploadFilePage';
 import TypeFunctionPage from './Pages/TypeFunctionPage';
@@ -16,8 +22,6 @@ import GraphicResult from './Pages/GraphicResult';
 export const GraphContext = createContext();
 
 function App() {
-
-
 
   const [graphData, setGraphData] = useState(null);
   const [graphType, setGraphType] = useState(null);

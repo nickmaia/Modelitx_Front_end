@@ -1,14 +1,16 @@
-export const formatCSVdata = (data) => {
+export let formatCSVdata = (data) => {
 
-  const firstDataSerie = data.slice(1,).map(
-    row => ({ x: Number(row[0]), y: Number(row[1]) })
+  const firstDataSerie = data.slice(1, ).map(
+    row => ({
+      x: Number(row[0]),
+      y: Number(row[1])
+    })
   )
 
   return firstDataSerie;
 
 }
-
-export const formatGraphData = (firstDataSerie, secondDataSerie) => {
+export let formatGraphData = (firstDataSerie, secondDataSerie) => {
 
   return {
     options: {
@@ -41,8 +43,7 @@ export const formatGraphData = (firstDataSerie, secondDataSerie) => {
       },
     },
 
-    series: [
-      {
+    series: [{
         name: 'Points',
         type: 'scatter',
         data: firstDataSerie,
