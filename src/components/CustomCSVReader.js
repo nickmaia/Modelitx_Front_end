@@ -89,7 +89,7 @@ const CustomCSVReader = () => {
 
       // carrega os dados do csv
       onUploadAccepted={async (results) => {
-
+        
         // encontra a primeira série
         const firstDataSerie = formatCSVdata(results.data);
        
