@@ -5,7 +5,8 @@ import { GraphContext } from '../../App';
 import { useContext } from 'react';
 import { Stack } from '@chakra-ui/react';
 
-const CustomButton = ({ text, next, previous }) => {
+
+const CustomButton = ({ text, next, previous, type }) => {
 
   const { graphType, graphData } = useContext(GraphContext)
 
@@ -28,7 +29,7 @@ const CustomButton = ({ text, next, previous }) => {
     }
 
     //colocando alert se o usuario não carregar arquivo .csv
-    else if (next === '/GraphicResult') {
+    else if (next === '/GraphicResultPage') {
       if (graphData === null) {
         alert('Carregue seu arquivo csv');
       }
@@ -43,11 +44,31 @@ const CustomButton = ({ text, next, previous }) => {
 
     return;
   }
+  if (graphData === null && graphType === type) {
+
+    let Button =()=>{
+      <Button 
+        isDisabled='true'
+        isLoading='true'
+        id='ButtomRetornar'
+      />
+
+    }
+    
+  }
+  if(graphData === null && graphType === null){
+    <Button
+    className='ButtomRetornar'
+    bg={'blackAlpha.900'}
+    />
+  }
+
 
   return (
     <Stack direction={{ base: 'column-reverse', md: 'row' }}  spacing={4}>
-      <Button
-      id='ButtonRetornar'
+    <Button
+     
+      id='ButtomRetornar'
       rounded={'full'}
       bg={'blackAlpha.900'}
       border="2px solid"
@@ -60,24 +81,27 @@ const CustomButton = ({ text, next, previous }) => {
       _hover={{
         bg: "#207AC6",
         color: 'whiteAlpha.900'
+      
       }}>
-      Voltar
+        Voltar
       </Button>
+
       <Button
-    rounded={'full'}
-    bg={'blackAlpha.900'}
-    border="2px solid"
-    borderColor="#207AC6"
-    fontSize={'1.3rem'}
-    width="14rem"
-    color="whiteAlpha.900"
-    py={'1.5rem'}
-    onClick={() => nextClick(next)}
-    _hover={{
-      bg: "#207AC6",
-      color: 'whiteAlpha.900'
-    }}>
-    {text}
+      className='ButtomContinuar'
+      rounded={'full'}
+      bg={'blackAlpha.900'}
+      border="2px solid"
+      borderColor="#207AC6"
+      fontSize={'1.3rem'}
+      width="14rem"
+      color="whiteAlpha.900"
+      py={'1.5rem'}
+      onClick={() => nextClick(next)}
+      _hover={{
+        bg: "#207AC6",
+        color: 'whiteAlpha.900'
+      }}>
+        {text}
       </Button>
     </Stack>
   );

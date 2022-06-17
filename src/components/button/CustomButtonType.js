@@ -25,9 +25,6 @@ const CustomButtonType = ({
                 src={typeimage}
                 alt={type}
             />
-
-
-
         </Button >
     );
 }

@@ -30,8 +30,8 @@ const UploadFilePage = () => {
                         justifyContent={'center'}
                         alignItems={'center'}
                     >
-                        <SmallText text="Carregue" />
-                        <BigText text="o arquivo" />
+                        <SmallText text="Carregue o" />
+                        <BigText text="arquivo .csv" />
                         <SmallText text="para gerar" />
                         <BigText text="a função" />
 
