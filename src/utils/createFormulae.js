@@ -1,15 +1,19 @@
 export let createLinearFormulae = (a, b) => {
-  return `f(x)= ${a.toFixed(2)}x+${b.toFixed(2)}`;
+  if(b>0){
+    b = '+'+b;
+  }
+  return `f(x)= ${a}x${b}`;
 }
 
 export let createExponencialFormulae = (a, b) => {
-  return `f(x)= ${a.toFixed(2)}e^{(${b.toFixed(2)}x)}`;
+  return `f(x)= ${a} e^{(${b}x)}`;
 }
 
 export let createSigmoidFormulae = (a, b, c, d) => {
-  return `f(x)=${a.toFixed(2)}/1+e^{(-x${-b.toFixed(2)}/${c.toFixed(2)})^{${d.toFixed(2)}}}`;
+  return `\\frac{${a}}{1+e^{(-x${-b}/${c})^{${d}}}}`;
 }
 
+
 export let createNormalFormulae = (a, b, c) => {
-  return `f(x)=${a.toFixed(2)}e^{(-x+${(b ** 2).toFixed(2)}) / (${(2 * (c ** 2)).toFixed(2)})}`;
+  return `f(x)=${a} e^{\\frac{-x+${(b ** 2)}}{${2 * (c ** 2)}}}`;
 }

@@ -1,6 +1,6 @@
 import Chart from "react-apexcharts";
 import { useContext } from 'react';
-import { GraphContext } from '../App';
+import { GraphContext } from '../../App';
 
 const Grafico = () => {
 

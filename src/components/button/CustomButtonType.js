@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Image, Button } from '@chakra-ui/react';
-import { GraphContext } from '../App';
+import { GraphContext } from '../../App';
 
 const CustomButtonType = ({
     typeimage,

@@ -11,15 +11,15 @@ import {
 import MathJax from 'react-mathjax';
 
 //Gráfico
-import Grafico from "../../components/Grafico";
+import Grafico from "../../components/graphic/Grafico";
 
 // components
-import CustomButton from '../../components/CustomButton';
-import RightImage from '../../components/RightImage';
+import CustomButton from '../../components/button/CustomButton';
+import RightImage from '../../components/image/RightImage';
 import { useContext } from 'react';
 import { GraphContext } from '../../App';
-import BigText from '../../components/BigText';
-import SmallText from '../../components/SmallText';
+import BigText from '../../components/text/BigText';
+import SmallText from '../../components/text/SmallText';
 
 
 const GraphicResult = () => {
@@ -92,7 +92,8 @@ const GraphicResult = () => {
 
                         <CustomButton
                             text={"Recomeçar"}
-                            path={'/'}
+                            next={'/'}
+                            previous={'/UploadFilePage'}
                         />
 
                     </Flex>

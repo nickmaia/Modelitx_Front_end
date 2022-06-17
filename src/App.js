@@ -39,11 +39,11 @@ function App() {
 
             <Route path="/" element={<HeroPage />} exact />
 
-            <Route path="/escolher-funcao" element={<TypeFunctionPage />} />
+            <Route path="/TypeFunctionPage" element={<TypeFunctionPage />} />
 
             <Route path="/UploadFilePage" element={<UploadFilePage />} />
 
-            <Route path="/GraphicResult" element={<GraphicResult />} />
+            <Route path="/GraphicResultPage" element={<GraphicResult />} />
 
           </Routes>
         </GraphContext.Provider>

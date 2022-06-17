@@ -6,8 +6,8 @@ import {
 } from '@chakra-ui/react';
 
 // components
-import CustomButton from '../../components/CustomButton';
-import RightImage from '../../components/RightImage';
+import CustomButton from '../../components/button/CustomButton';
+import RightImage from '../../components/image/RightImage';
 
 //assets
 import linearImage from '../../assets/linear.svg';
@@ -17,9 +17,9 @@ import normalImage from '../../assets/normal.svg';
 
 
 //Button
-import CustomButtonType from '../../components/CustomButtonType';
-import SmallText from '../../components/SmallText';
-import BigText from '../../components/BigText';
+import CustomButtonType from '../../components/button/CustomButtonType';
+import SmallText from '../../components/text/SmallText';
+import BigText from '../../components/text/BigText';
 
 export default function TypeFunctionPage() {
 
@@ -74,12 +74,11 @@ export default function TypeFunctionPage() {
                         <br />
                         <br />
 
-
-                        <CustomButton
-                            text={"Próximo"}
-                            path={'/UploadFilePage'}
-                        />
-
+                            <CustomButton
+                                text={"Próximo"}
+                                next = {'/UploadFilePage'}
+                                previous ={'/'}
+                            />
                     </Flex>
                 </Stack>
             </Flex>

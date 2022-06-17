@@ -5,13 +5,13 @@ import {
 } from '@chakra-ui/react';
 
 // components
-import CustomButton from '../../components/CustomButton';
-import RightImage from '../../components/RightImage';
+import CustomButton from '../../components/button/CustomButton';
+import RightImage from '../../components/image/RightImage';
 
-// import CSVReader from '../../components/CSVReader';
-import SmallText from '../../components/SmallText';
-import BigText from '../../components/BigText';
-import CustomCSVReader from '../../components/CustomCSVReader';
+
+import SmallText from '../../components/text/SmallText';
+import BigText from '../../components/text/BigText';
+import CustomCSVReader from '../../components/button/CustomCSVReader';
 
 
 const UploadFilePage = () => {
@@ -46,7 +46,9 @@ const UploadFilePage = () => {
 
                         <CustomButton
                             text={"Veja o Gráfico"}
-                            path={'/GraphicResult'}
+                            next={'/GraphicResultPage'}
+                            previous={'/TypeFunctionPage'}
+                              
                         />
 
                     </Flex>

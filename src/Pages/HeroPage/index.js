@@ -11,8 +11,8 @@ import xImage from '../../assets/x.svg';
 import logoImage from '../../assets/logo.svg';
 
 // components
-import CustomButton from '../../components/CustomButton';
-import RightImage from '../../components/RightImage';
+import CustomButton from '../../components/button/CustomButton';
+import RightImage from '../../components/image/RightImage';
 
 
 
@@ -61,7 +61,7 @@ export default function HeroPage() {
 
             <CustomButton
               text={"Começar"}
-              path={'/escolher-funcao'}
+              next ={'/TypeFunctionPage'}
             />
           </Flex>
 

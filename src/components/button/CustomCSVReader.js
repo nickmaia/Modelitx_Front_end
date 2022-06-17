@@ -1,21 +1,21 @@
 import { useContext } from "react";
 import { FaTimes, FaUpload } from "react-icons/fa";
 import { useCSVReader } from 'react-papaparse';
-import { GraphContext } from "../App";
-import { createFittingData } from "../utils/createFittingData";
+import { GraphContext } from "../../App";
+import { createFittingData } from "../../utils/createFittingData";
 import {
   createExponencialModel,
   createLinearModel,
   createNormalModel,
   createSigmoidModel
-} from "../utils/createModels";
+} from "../../utils/createModels";
 import {
   createExponencialFormulae,
   createLinearFormulae,
   createNormalFormulae,
   createSigmoidFormulae
-} from "../utils/createFormulae"
-import { formatCSVdata, formatGraphData } from "../utils/formatters";
+} from "../../utils/createFormulae"
+import { formatCSVdata, formatGraphData } from "../../utils/formatters";
 
 
 const styles = {
