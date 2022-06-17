@@ -1,38 +1,37 @@
 import { useNavigate } from 'react-router-dom';
-import {  Button } from "@chakra-ui/react";
+import { Stack, Button } from "@chakra-ui/react";
 //app
 import { GraphContext } from '../../App';
 import { useContext } from 'react';
 
 
+const CustomButton = ({ text, next, previous}) => {
 
-const CustomButton = ({ text, next}) => {
-
-  const { graphType, graphData} = useContext(GraphContext)
+  const { graphType, graphData , setGraphFormulae, setGraphData, setGraphType} = useContext(GraphContext)
 
   const navigate = useNavigate();
+
+  const previousClick = (previous) => {
+    navigate(previous)
+  }
 
   const nextClick = (next) => {
 
     //colocando alert se o usuario não escolher opções obrigatorias
-    if (next === '/UploadFilePage') {
-      if (graphType === null) {
-        alert('Escolha uma regressão');
-      }
-      else {
-        navigate(next)
-      }
+    if (next === '/UploadFilePage' && graphType === null) {  
+        alert('Escolha uma regressão');    
     }
-
     //colocando alert se o usuario não carregar arquivo .csv
-    else if (next === '/GraphicResultPage') {
-      if (graphData === null) {
+    else if (next === '/GraphicResultPage' && graphData === null) {
         alert('Carregue seu arquivo csv');
-      }
-      else {
-        navigate(next)
-      }
     }
+    else  if(next === '/'){
+      setGraphData(null);
+      setGraphFormulae(null);
+      setGraphType(null);
+      navigate(next);
+    }
+  
 
     else {
       navigate(next)
@@ -43,10 +42,11 @@ const CustomButton = ({ text, next}) => {
 
   const type = graphType;
 
+  console.log("setGraphFormulae",graphType)
 
   return (
+    text ==="Começar"?
       <Button
-
       isDisabled={(graphType === type && graphData == null && text==="Veja o Gráfico") ? true : false}
       className='ButtomContinuar'
       rounded={'full'}
@@ -64,6 +64,47 @@ const CustomButton = ({ text, next}) => {
       }}>
         {text}
       </Button>
+      :
+      <Stack direction={{ base: 'column', md: 'row-reverse' }}  spacing={4}>
+      <Button
+      
+      isDisabled={(graphType === type && graphData == null && text==="Veja o Gráfico") ? true : false}
+      className='ButtomContinuar'
+      rounded={'full'}
+      bg={'blackAlpha.900'}
+      border="2px solid"
+      borderColor="#207AC6"
+      fontSize={'1.3rem'}
+      width="14rem"
+      color="whiteAlpha.900"
+      py={'1.5rem'}
+      onClick={() => nextClick(next) } 
+      _hover={{
+        bg: "#207AC6",
+        color: 'whiteAlpha.900'
+      }}>
+        {text}
+      </Button>
+      <Button
+     
+      id='ButtomRetornar'
+      rounded={'full'}
+      bg={'blackAlpha.900'}
+      border="2px solid"
+      borderColor="#207AC6"
+      fontSize={'1.3rem'}
+      width="14rem"
+      color="whiteAlpha.900"
+      py={'1.5rem'}
+      onClick={() => previousClick(previous)}
+      _hover={{
+        bg: "#207AC6",
+        color: 'whiteAlpha.900'
+      
+      }}>
+        Voltar
+      </Button>
+      </Stack>
   );
 }
 

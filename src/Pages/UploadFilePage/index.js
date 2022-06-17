@@ -12,7 +12,7 @@ import RightImage from '../../components/image/RightImage';
 import SmallText from '../../components/text/SmallText';
 import BigText from '../../components/text/BigText';
 import CustomCSVReader from '../../components/button/CustomCSVReader';
-import CustomButtonComeBack from '../../components/button/CustomButtonComeBack';
+
 
 
 const UploadFilePage = () => {
@@ -44,17 +44,15 @@ const UploadFilePage = () => {
 
                         <br />
                         <br />
-                        <Stack direction={{ base: 'column', md: 'row-reverse' }}  spacing={4}>
+                        
                             <CustomButton
                                 text={"Veja o Gráfico"}
                                 next={'/GraphicResultPage'}
-                                
+                                previous={'/TypeFunctionPage'}
 
                             />
-                            <CustomButtonComeBack 
-                                previous={'/TypeFunctionPage'}
-                            />
-                        </Stack>
+                      
+                     
                     </Flex>
                 </Stack>
             </Flex>
