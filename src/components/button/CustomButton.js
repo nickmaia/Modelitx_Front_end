@@ -1,20 +1,16 @@
 import { useNavigate } from 'react-router-dom';
-import { Button } from "@chakra-ui/react";
+import {  Button } from "@chakra-ui/react";
 //app
 import { GraphContext } from '../../App';
 import { useContext } from 'react';
-import { Stack } from '@chakra-ui/react';
 
 
-const CustomButton = ({ text, next, previous, type }) => {
 
-  const { graphType, graphData } = useContext(GraphContext)
+const CustomButton = ({ text, next}) => {
+
+  const { graphType, graphData} = useContext(GraphContext)
 
   const navigate = useNavigate();
-
-  const previousClick = (previous) => {
-    navigate(previous)
-  }
 
   const nextClick = (next) => {
 
@@ -44,49 +40,14 @@ const CustomButton = ({ text, next, previous, type }) => {
 
     return;
   }
-  if (graphData === null && graphType === type) {
 
-    let Button =()=>{
-      <Button 
-        isDisabled='true'
-        isLoading='true'
-        id='ButtomRetornar'
-      />
-
-    }
-    
-  }
-  if(graphData === null && graphType === null){
-    <Button
-    className='ButtomRetornar'
-    bg={'blackAlpha.900'}
-    />
-  }
+  const type = graphType;
 
 
   return (
-    <Stack direction={{ base: 'column-reverse', md: 'row' }}  spacing={4}>
-    <Button
-     
-      id='ButtomRetornar'
-      rounded={'full'}
-      bg={'blackAlpha.900'}
-      border="2px solid"
-      borderColor="#207AC6"
-      fontSize={'1.3rem'}
-      width="14rem"
-      color="whiteAlpha.900"
-      py={'1.5rem'}
-      onClick={() => previousClick(previous)}
-      _hover={{
-        bg: "#207AC6",
-        color: 'whiteAlpha.900'
-      
-      }}>
-        Voltar
-      </Button>
-
       <Button
+
+      isDisabled={(graphType === type && graphData == null && text==="Veja o Gráfico") ? true : false}
       className='ButtomContinuar'
       rounded={'full'}
       bg={'blackAlpha.900'}
@@ -103,7 +64,6 @@ const CustomButton = ({ text, next, previous, type }) => {
       }}>
         {text}
       </Button>
-    </Stack>
   );
 }
 

@@ -27,5 +27,6 @@ const CustomButtonType = ({
             />
         </Button >
     );
+
 }
 export default CustomButtonType;

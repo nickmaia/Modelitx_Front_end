@@ -20,6 +20,7 @@ import normalImage from '../../assets/normal.svg';
 import CustomButtonType from '../../components/button/CustomButtonType';
 import SmallText from '../../components/text/SmallText';
 import BigText from '../../components/text/BigText';
+import CustomButtonComeBack from '../../components/button/CustomButtonComeBack';
 
 export default function TypeFunctionPage() {
 
@@ -73,12 +74,16 @@ export default function TypeFunctionPage() {
 
                         <br />
                         <br />
-
+                        <Stack direction={{ base: 'column', md: 'row-reverse' }}  spacing={4}>
                             <CustomButton
                                 text={"Próximo"}
                                 next = {'/UploadFilePage'}
+                                
+                            />
+                            <CustomButtonComeBack 
                                 previous ={'/'}
                             />
+                            </Stack>
                     </Flex>
                 </Stack>
             </Flex>

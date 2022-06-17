@@ -20,6 +20,7 @@ import { useContext } from 'react';
 import { GraphContext } from '../../App';
 import BigText from '../../components/text/BigText';
 import SmallText from '../../components/text/SmallText';
+import CustomButtonComeBack from '../../components/button/CustomButtonComeBack';
 
 
 const GraphicResult = () => {
@@ -89,13 +90,16 @@ const GraphicResult = () => {
 
                         <br />
                         <br />
-
-                        <CustomButton
-                            text={"Recomeçar"}
-                            next={'/'}
-                            previous={'/UploadFilePage'}
-                        />
-
+                        <Stack direction={{ base: 'column', md: 'row-reverse' }}  spacing={4}>
+                            <CustomButton
+                                text={"Recomeçar"}
+                                next={'/'}
+                                
+                            />
+                            <CustomButtonComeBack  
+                                previous={'/UploadFilePage'}
+                            />
+                        </Stack>
                     </Flex>
                 </Stack>
             </Flex>
