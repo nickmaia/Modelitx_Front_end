@@ -10,10 +10,10 @@ export let createExponencialFormulae = (a, b) => {
 }
 
 export let createSigmoidFormulae = (a, b, c, d) => {
-  return `\\frac{${a}}{1+e^{(-x${-b}/${c})^{${d}}}}`;
+  return `f(x)= \\frac{${a}}{1+e^{(-x${-b}/${c})^{${d}}}}`;
 }
 
 
 export let createNormalFormulae = (a, b, c) => {
-  return `f(x)=${a} e^{\\frac{-x+${(b ** 2)}}{${2 * (c ** 2)}}}`;
+  return `f(x)= ${a} e^{\\frac{-x+${(b ** 2)}}{${2 * (c ** 2)}}}`;
 }
