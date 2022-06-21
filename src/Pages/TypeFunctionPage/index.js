@@ -14,8 +14,8 @@ import linearImage from '../../assets/linear.svg';
 import exponencialImage from '../../assets/exponencial.svg';
 import sigmoidImage from '../../assets/sigmoid.svg';
 import normalImage from '../../assets/normal.svg';
-import logaritmicaImage from '../../assets/logaritmica.svg';
 import polinomialgrau2Image from '../../assets/polinomialgrau2.svg';
+import polinomialgrau3Image from '../../assets/polinomialgrau3.svg';
 
 
 
@@ -50,7 +50,7 @@ export default function TypeFunctionPage() {
                         <br />
 
                         <SimpleGrid
-                            columns={2} spacing={4}
+                            columns={{base: 2, md: 3}} spacing={4}
                             justifyContent={'center'}
                             justifySelf={'center'}
                             justifyItems={'center'}
@@ -74,11 +74,11 @@ export default function TypeFunctionPage() {
                             />
                             <CustomButtonType
                                 typeimage={polinomialgrau2Image}
-                                type={'Polinomial de 2°'}
+                                type={'Polinomial 2°'}
                             />
                             <CustomButtonType
-                                typeimage={logaritmicaImage}
-                                type={'Polinomial de 3°'}
+                                typeimage={polinomialgrau3Image}
+                                type={'Polinomial 3°'}
                             />
 
                         </SimpleGrid>

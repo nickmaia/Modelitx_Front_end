@@ -22,7 +22,8 @@ export default function HeroPage() {
     <Stack
       minH={'100vh'}
       direction={{ base: 'column', md: 'row' }}
-      bgColor="#000"
+      bgColor="#000" 
+     
     >
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={6} w={'full'} maxW={'lg'}>
@@ -49,11 +50,15 @@ export default function HeroPage() {
             <br />
             <br />
             <br />
+            <br />
+            <br />
 
             <Flex flex='1' >
               <Image src={logoImage} width="16rem" height="8rem" alt="Logo" />
             </Flex>
 
+            <br />
+            <br />
             <br />
             <br />
             <br />

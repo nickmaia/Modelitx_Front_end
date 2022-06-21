@@ -189,7 +189,7 @@ const CustomCSVReader = () => {
         if (graphType === "Polinomial de 3°") {
 
           //coleta a,b
-          let { a, b, c, xArray, yArray } = await createPolinomial3Model(firstDataSerie);
+          let { a, b, c, d, xArray, yArray } = await createPolinomial3Model(firstDataSerie);
           // encontra a segunda série
           let secondDataSerie = createFittingData(xArray, yArray);
 
@@ -198,7 +198,7 @@ const CustomCSVReader = () => {
           setGraphData(graphData)
 
           //Atualiza graphFormulae
-          let formulae = createPolinomial3Formulae(a, b, c);
+          let formulae = createPolinomial3Formulae(a, b, c, d);
           setGraphFormulae(formulae);
 
         }
