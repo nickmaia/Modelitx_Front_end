@@ -7,12 +7,16 @@ import {
   createExponencialModel,
   createLinearModel,
   createNormalModel,
+  createPolinomial2Model,
+  createPolinomial3Model,
   createSigmoidModel
 } from "../../utils/createModels";
 import {
   createExponencialFormulae,
   createLinearFormulae,
   createNormalFormulae,
+  createPolinomial2Formulae,
+  createPolinomial3Formulae,
   createSigmoidFormulae
 } from "../../utils/createFormulae"
 import { formatCSVdata, formatGraphData } from "../../utils/formatters";
@@ -161,6 +165,40 @@ const CustomCSVReader = () => {
 
           //Atualiza graphFormulae
           let formulae = createNormalFormulae(a, b, c);
+          setGraphFormulae(formulae);
+
+        }
+
+        if (graphType === "Polinomial de 2°") {
+
+          //coleta a,b
+          let { a, b, c, xArray, yArray } = await createPolinomial2Model(firstDataSerie);
+          // encontra a segunda série
+          let secondDataSerie = createFittingData(xArray, yArray);
+
+          // cria os object graphData -> data: data1, data: data2
+          let graphData = formatGraphData(firstDataSerie, secondDataSerie);
+          setGraphData(graphData)
+
+          //Atualiza graphFormulae
+          let formulae = createPolinomial2Formulae(a, b, c);
+          setGraphFormulae(formulae);
+
+        }
+
+        if (graphType === "Polinomial de 3°") {
+
+          //coleta a,b
+          let { a, b, c, xArray, yArray } = await createPolinomial3Model(firstDataSerie);
+          // encontra a segunda série
+          let secondDataSerie = createFittingData(xArray, yArray);
+
+          // cria os object graphData -> data: data1, data: data2
+          let graphData = formatGraphData(firstDataSerie, secondDataSerie);
+          setGraphData(graphData)
+
+          //Atualiza graphFormulae
+          let formulae = createPolinomial3Formulae(a, b, c);
           setGraphFormulae(formulae);
 
         }

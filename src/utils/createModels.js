@@ -116,3 +116,61 @@ export let createNormalModel = async (firstDataSerie) => {
     yArray: y_array
   });
 }
+
+export let createPolinomial2Model = async (firstDataSerie) => {
+  const x = Object.values(firstDataSerie).map(row => Number(row.x));
+  const y = Object.values(firstDataSerie).map(row => Number(row.y));
+
+  const response = await axios.post(
+    "http://127.0.0.1:8000/api/polinomial2", {
+      x,
+      y
+    }
+  )
+
+  const {
+    a: aPolinomial2,
+    b: bPolinomial2,
+    c: cPolinomial2,
+    x_array,
+    y_array
+  } = await response.data;
+
+  return ({
+    a: aPolinomial2,
+    b: bPolinomial2,
+    c: cPolinomial2,
+    xArray: x_array,
+    yArray: y_array
+  });
+}
+
+export let createPolinomial3Model = async (firstDataSerie) => {
+  const x = Object.values(firstDataSerie).map(row => Number(row.x));
+  const y = Object.values(firstDataSerie).map(row => Number(row.y));
+
+  const response = await axios.post(
+    "http://127.0.0.1:8000/api/polinomial3", {
+      x,
+      y
+    }
+  )
+
+  const {
+    a: aPolinomial3,
+    b: bPolinomial3,
+    c: cPolinomial3,
+    d: dPolinomial3,
+    x_array,
+    y_array
+  } = await response.data;
+
+  return ({
+    a: aPolinomial3,
+    b: bPolinomial3,
+    c: cPolinomial3,
+    d: dPolinomial3,
+    xArray: x_array,
+    yArray: y_array
+  });
+}
