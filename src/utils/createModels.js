@@ -122,7 +122,7 @@ export let createPolinomial2Model = async (firstDataSerie) => {
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
 
   const response = await axios.post(
-    "http://127.0.0.1:8000/api/polinomial2", {
+    "https://modelitx.herokuapp.com/api/polinomial2", {
       x,
       y
     }
@@ -150,7 +150,7 @@ export let createPolinomial3Model = async (firstDataSerie) => {
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
 
   const response = await axios.post(
-    "http://127.0.0.1:8000/api/polinomial3", {
+    "https://modelitx.herokuapp.com/api/polinomial3", {
       x,
       y
     }
