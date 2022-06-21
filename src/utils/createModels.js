@@ -38,7 +38,7 @@ export let createExponencialModel = async (firstDataSerie) => {
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
 
   const response = await axios.post(
-    "https://modelitx.herokuapp.com/api/exponencial", {
+    "http://127.0.0.1:8000/api/exponencial", {
       x,
       y
     }

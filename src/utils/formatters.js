@@ -21,12 +21,15 @@ export let formatGraphData = (firstDataSerie, secondDataSerie) => {
       yaxis: {
         labels: {
           show: true,
-          formatter: (val) => Number(val).toFixed(2)
+          formatter: (val) => Number(val).toFixed(1)
         }
       },
       xaxis: {
         type: 'numeric',
-
+        labels: {
+          show: true,
+          formatter: (val) => Number(val).toFixed(1)
+        }
       },
       fill: {
         type: 'solid',

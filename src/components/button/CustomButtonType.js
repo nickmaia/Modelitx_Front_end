@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Image, Button } from '@chakra-ui/react';
+import { Image, Button,Text, Stack } from '@chakra-ui/react';
 import { GraphContext } from '../../App';
 
 const CustomButtonType = ({
@@ -21,10 +21,15 @@ const CustomButtonType = ({
             bg={graphType === type ? '#7F7F7F' : '#2F2F2F'}
             color={"#ffff"}
         >
-            <Image
-                src={typeimage}
-                alt={type}
-            />
+            <Stack spacing={0.5}>
+                <Image
+                    src={typeimage}
+                    alt={type}
+                />
+                <Text>
+                    {type}
+                </Text>
+            </Stack>
         </Button >
     );
 
