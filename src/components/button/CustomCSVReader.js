@@ -169,7 +169,7 @@ const CustomCSVReader = () => {
 
         }
 
-        if (graphType === "Polinomial de 2°") {
+        if (graphType === "Polinomial 2°") {
 
           //coleta a,b
           let { a, b, c, xArray, yArray } = await createPolinomial2Model(firstDataSerie);
@@ -186,7 +186,7 @@ const CustomCSVReader = () => {
 
         }
 
-        if (graphType === "Polinomial de 3°") {
+        if (graphType === "Polinomial 3°") {
 
           //coleta a,b
           let { a, b, c, d, xArray, yArray } = await createPolinomial3Model(firstDataSerie);

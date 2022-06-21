@@ -1,6 +1,6 @@
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="91" height="55" viewBox="0 0 274.000000 226.000000"
- preserveAspectRatio="xMidYMid meet">
+ preserveAspectRatio="xMidYMid meet" fill="none">
 
 <g transform="translate(0.000000,226.000000) scale(0.100000,-0.100000)"
 fill="#ffffff" stroke="none">
@@ -8,6 +8,6 @@ fill="#ffffff" stroke="none">
 -166 -422 -21 -574 -53 -733 -157 -196 -127 -320 -382 -367 -753 -9 -72 -15
 -153 -13 -180 3 -46 5 -50 30 -53 37 -4 43 14 57 168 32 360 143 615 323 741
 144 100 293 133 693 154 204 10 356 26 464 46 407 78 708 297 932 676 122 207
-143 275 87 281 -25 3 -31 -5 -84 -110z"/>
+143 275 87 281 -25 3 -31 -5 -84 -110z" stroke="white" stroke-width="6"/>
 </g>
 </svg>
