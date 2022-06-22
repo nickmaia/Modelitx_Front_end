@@ -25,7 +25,7 @@ export default function HeroPage() {
       bgColor="#000" 
      
     >
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+      <Flex p={8} flex={1} align={'center'} justify={'center'} bgColor="#000" >
         <Stack spacing={6} w={'full'} maxW={'lg'}>
           <Flex
             flexDir={'column'}
