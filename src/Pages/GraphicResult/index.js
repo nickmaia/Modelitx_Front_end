@@ -31,12 +31,13 @@ const GraphicResult = () => {
 
     return (
         <Stack
-            minH={'100vh'}
-            direction={{ base: 'column', md: 'row' }}
-            bgColor="#000"
+            
+        minH={'100vh'}
+        direction={{ base: 'column', md: 'row' }}
+        bgColor="#000"
         >
-            <Flex p={8} flex={1} align={'center'} justify={'center'}>
-                <Stack spacing={6} w={'full'} maxW={'lg'}>
+            <Flex p={8} flex={1} align={'center'} justify={'center'}  height={'100vh'} >
+                <Stack spacing={6} w={'full'} maxW={'lg'} >
 
                     <Flex
                         flexDir={'column'}
@@ -51,20 +52,23 @@ const GraphicResult = () => {
 
 
 
-                        <MathJax.Provider>
+                        <MathJax.Provider >
                             <Flex
                                 textAlign={'center'}
                                 justifyContent={'center'}
                                 alignItems={'center'}
                                 border={'4px'}
                                 borderColor={'#207AC6'}
-                                borderRadius={'30px'}
+                                borderRadius={'40px'}
                                 color={'#FFFFFF'}
-                                w={'85%'} h={'100%'}
+                                w={'100%'} h={'100%'}
+                                
+                                
 
                             >
                                 <Text
-                                    fontSize={'2xl'}
+                                    w={'100%'} h={'100%'}
+                                    fontSize={{ base: 'sm', md: 'xl',sm:'xs'}}
                                     fontWeight={'medium'}
                                 >
                                     <MathJax.Node inline formula={formulae} />
@@ -79,9 +83,10 @@ const GraphicResult = () => {
 
 
                         <Box
-                            h={'12.875rem'}
-                            w={'20rem'}
-                            border={'4px'}
+                            
+                            h={{ base: '12.875rem', md: '19rem' }}
+                            w={{ base: '20rem', md: '30rem' }}
+                            border={'2px'}
                             borderColor={'#FFFFFF'}
                             borderRadius={'0.9375rem'}
                         >

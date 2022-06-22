@@ -14,7 +14,7 @@ const Grafico = () => {
                         options={graphData.options}
                         series={graphData.series}
                         type="line"
-                        width="100%"
+
                     />
                 </div>
             </div>

@@ -4,7 +4,7 @@ const BigText = ({text}) => {
   return (
     <Text 
       color={"#207AC6"} 
-      fontSize='2.625rem' 
+      fontSize={{ base: '2.3rem', md: '2.6rem'}} 
       textAlign={'center'} 
       lineHeight={'3.0625rem'} 
       fontWeight={'bold'} 

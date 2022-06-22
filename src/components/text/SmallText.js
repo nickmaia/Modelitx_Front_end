@@ -4,7 +4,7 @@ const SmallText = ({text}) => {
   return (
     <Text
       color={"#ffff"} 
-      fontSize='1.75rem' 
+      fontSize={{ base: '1.5rem', md: '1.8rem'}} 
       textAlign={'center'} 
       lineHeight={'2.0625rem'} 
       fontWeight={'bold'} 

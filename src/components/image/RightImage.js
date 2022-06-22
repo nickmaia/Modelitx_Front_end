@@ -1,11 +1,11 @@
 // chakra
 import { Image, Flex } from '@chakra-ui/react';
-
+import image from '../../assets/imagelado.svg'
 
 const RightImage = () => {
     return (
 
-        <Flex flex={1} height={'100vh'} display={{ base: "none", sm: "block" }}>
+        <Flex flex={1} height={'100vh'} display={{ base: "none", sm: "block" }} backgroundColor={'#000'}>
             <Image
 
                 w="100%"
@@ -13,7 +13,7 @@ const RightImage = () => {
                 alt={'Login Image'}
                 objectFit={'cover'}
                 src={
-                    'https://static8.depositphotos.com/1009086/998/i/600/depositphotos_9981312-stock-photo-blue-moon-over-water.jpg'
+                    image
                 }
             />
         </Flex>
