@@ -74,29 +74,34 @@ const CustomCSVReader = () => {
 
   return (
     <CSVReader
-    
-    config={{
-      
-        header: false,
-        delimiter: "",
-        delimitersToGuess: [',', '	', '\t', '|', ';', '\r', '\n', '"', '\ufeff'],
-        dynamicTyping: true,
-        comments: "#",
-        skipEmptyLines: 'greedy',
-        type: "FieldMismatch",
-	      code: "TooManyFields",
-	      message: "Expected 3 fields, but parsed 4",
-	      row: 1
-        
-      }}
-    
+
+      config={
+        {
+
+          header: false,// typeHeader === true ? true : false
+          delimiter: "",
+          delimitersToGuess: [',', '	', '\t', '|', ';', '\r', '\n', '"', '\ufeff'],
+          dynamicTyping: true,
+          comments: "#",
+          skipEmptyLines: 'greedy',
+          type: "FieldMismatch",
+          code: "TooManyFields",
+          message: "Expected 3 fields, but parsed 4",
+          row: 1
+
+        }
+      }
+
 
       // carrega os dados do csv
       onUploadAccepted={async (results) => {
-        
+
+        //const typeHeader = typeof results.data[0][0] === 'string' && typeof results.data[0][1] === 'string'
+
+        console.log(results.data)
         // encontra a primeira série
         const firstDataSerie = formatCSVdata(results.data);
-       
+
 
         if (graphType === "Linear") {
 

@@ -22,11 +22,12 @@ export default function HeroPage() {
     <Stack
       minH={'100vh'}
       direction={{ base: 'column', md: 'row' }}
-      bgColor="#000" 
-     
+      bgColor="#000"
+
     >
       <Flex p={8} flex={1} align={'center'} justify={'center'} bgColor="#000" >
         <Stack spacing={6} w={'full'} maxW={'lg'}>
+
           <Flex
             flexDir={'column'}
             justifyContent={'center'}
@@ -45,6 +46,8 @@ export default function HeroPage() {
                 marginLeft={'-0.4rem'}
               />
             </Flex>
+
+
 
 
             <br />
@@ -66,7 +69,7 @@ export default function HeroPage() {
 
             <CustomButton
               text={"Começar"}
-              next ={'/TypeFunctionPage'}
+              next={'/TypeFunctionPage'}
             />
           </Flex>
 
