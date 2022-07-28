@@ -1,5 +1,6 @@
 // chakra
 import {
+    Box,
     Flex,
     Stack
 } from '@chakra-ui/react';
@@ -24,7 +25,12 @@ const UploadFilePage = () => {
             direction={{ base: 'column', md: 'row' }}
             bgColor="#000"
         >
+            <Box justifyItems={'left'}>
+                <CustomButtonDoubt />
+            </Box>
+
             <Flex p={8} flex={1} align={'center'} justify={'center'}>
+
                 <Stack spacing={6} w={'full'} maxW={'lg'}>
 
                     <Flex
@@ -40,25 +46,20 @@ const UploadFilePage = () => {
                         <br />
                         <br />
                         <br />
-                        <Stack
-                            spacing={2}
-                            direction={'row'}
-                            alignItems={'center'}
-                        >
-                            <CustomCSVReader />
-                            <CustomButtonDoubt/>
-                        </Stack>
-                        <br />
-                        <br />
-                        
-                            <CustomButton
-                                text={"Veja o Gráfico"}
-                                next={'/GraphicResultPage'}
-                                previous={'/TypeFunctionPage'}
 
-                            />
-                      
-                     
+                        <CustomCSVReader />
+
+                        <br />
+                        <br />
+
+                        <CustomButton
+                            text={"Veja o Gráfico"}
+                            next={'/GraphicResultPage'}
+                            previous={'/TypeFunctionPage'}
+
+                        />
+
+
                     </Flex>
                 </Stack>
             </Flex>
