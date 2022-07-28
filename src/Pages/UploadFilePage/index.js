@@ -9,9 +9,10 @@ import CustomButton from '../../components/button/CustomButton';
 import RightImage from '../../components/image/RightImage';
 
 
-import SmallText from '../../components/text/SmallText';
-import BigText from '../../components/text/BigText';
+import CustomButtonDoubt from '../../components/button/CustomButtonDoubt';
 import CustomCSVReader from '../../components/button/CustomCSVReader';
+import BigText from '../../components/text/BigText';
+import SmallText from '../../components/text/SmallText';
 
 
 
@@ -39,9 +40,10 @@ const UploadFilePage = () => {
                         <br />
                         <br />
                         <br />
-
-                        <CustomCSVReader />
-
+                        <Stack spacing={4} direction={'row'}>
+                            <CustomCSVReader />
+                            <CustomButtonDoubt p={"50px"} mt={"50px"}/>
+                        </Stack>
                         <br />
                         <br />
                         

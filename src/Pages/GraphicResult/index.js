@@ -101,10 +101,8 @@ const GraphicResult = () => {
                                 next={'/'}
                                 previous={'/UploadFilePage'}
                             />
-                             
                             
                             
-              
                     </Flex>
                 </Stack>
             </Flex>

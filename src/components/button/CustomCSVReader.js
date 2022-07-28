@@ -4,6 +4,14 @@ import { useCSVReader } from 'react-papaparse';
 import { GraphContext } from "../../App";
 import { createFittingData } from "../../utils/createFittingData";
 import {
+  createExponencialFormulae,
+  createLinearFormulae,
+  createNormalFormulae,
+  createPolinomial2Formulae,
+  createPolinomial3Formulae,
+  createSigmoidFormulae
+} from "../../utils/createFormulae";
+import {
   createExponencialModel,
   createLinearModel,
   createNormalModel,
@@ -11,14 +19,6 @@ import {
   createPolinomial3Model,
   createSigmoidModel
 } from "../../utils/createModels";
-import {
-  createExponencialFormulae,
-  createLinearFormulae,
-  createNormalFormulae,
-  createPolinomial2Formulae,
-  createPolinomial3Formulae,
-  createSigmoidFormulae
-} from "../../utils/createFormulae"
 import { formatCSVdata, formatGraphData } from "../../utils/formatters";
 
 
