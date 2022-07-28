@@ -1,11 +1,11 @@
 import {
-    Button, Flex, Image, Modal,
-    ModalBody,
-    ModalCloseButton,
-    ModalContent,
-    ModalFooter,
-    ModalHeader,
-    ModalOverlay, useDisclosure
+  Button, Flex, Image, Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay, useDisclosure
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -31,7 +31,6 @@ const CustomButtonDoubt = () => {
                 bgColor={"#000"}
                 color={"#207AC6"}
                 _hover={{
-                    bgColor: '#207AC6',
                     color: 'whiteAlpha.900'
                 }}
             >
