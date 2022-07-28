@@ -40,9 +40,13 @@ const UploadFilePage = () => {
                         <br />
                         <br />
                         <br />
-                        <Stack spacing={4} direction={'row'}>
+                        <Stack
+                            spacing={2}
+                            direction={'row'}
+                            alignItems={'center'}
+                        >
                             <CustomCSVReader />
-                            <CustomButtonDoubt />
+                            <CustomButtonDoubt/>
                         </Stack>
                         <br />
                         <br />

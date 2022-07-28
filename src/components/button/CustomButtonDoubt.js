@@ -24,7 +24,7 @@ const CustomButtonDoubt = () => {
     return (
         <>
   
-            <Button 
+        <Button 
                 mt={3}
                 ref={btnRef}
                 onClick={onOpen}
@@ -35,7 +35,7 @@ const CustomButtonDoubt = () => {
                 }}
             >
                 <FaRegQuestionCircle
-                    size={"100%"}
+                    size={"85%"}
                 />
             </Button>
   
