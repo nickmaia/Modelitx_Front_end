@@ -25,10 +25,6 @@ const UploadFilePage = () => {
             direction={{ base: 'column', md: 'row' }}
             bgColor="#000"
         >
-            <Box justifyItems={'left'}>
-                <CustomButtonDoubt />
-            </Box>
-
             <Flex p={8} flex={1} align={'center'} justify={'center'}>
 
                 <Stack spacing={6} w={'full'} maxW={'lg'}>
@@ -46,8 +42,18 @@ const UploadFilePage = () => {
                         <br />
                         <br />
                         <br />
+                        <Stack
+                            spacing={6}
+                            flexDir={{ base: 'column', md: 'row' }}
+                            marginInlineStart={'10'}
+                        >
+                            <CustomCSVReader />
 
-                        <CustomCSVReader />
+                            <Box marginInlineStart={'-10'}>
+                                <CustomButtonDoubt />
+                            </Box>
+                        </Stack>
+
 
                         <br />
                         <br />

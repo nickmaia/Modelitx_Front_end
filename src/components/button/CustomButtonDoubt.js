@@ -9,14 +9,9 @@ import React from "react";
 
 import { FaRegQuestionCircle } from "react-icons/fa";
 
-import Exemplo01 from "../../assets/Imagem1.png";
-import Exemplo02 from "../../assets/Imagem2.png";
-import Exemplo03 from "../../assets/Imagem3.png";
-import Exemplo04 from "../../assets/Imagem4.png";
-import Exemplo05 from "../../assets/Imagem5.png";
-import Exemplo06 from "../../assets/Imagem6.png";
-import ExImage from "../image/ExImage";
-import BigText from "../text/BigText";
+
+import TableExemple from "../Table/TableExemple";
+import MediumText from "../text/MediumText";
 
 const CustomButtonDoubt = () => {
 
@@ -50,38 +45,52 @@ const CustomButtonDoubt = () => {
 
                         >
                                 <ModalOverlay />
-                                <ModalContent
-                                        backgroundColor={"#000"}
-                                >
+                                <ModalContent>
                                         <ModalHeader>
-                                                <BigText
+                                                <MediumText
                                                         text='Exemplos de arquivos: '
                                                 />
                                         </ModalHeader>
-                                        <ModalCloseButton color={"#207AC6"} />
-                                        <ModalBody>
-                                                <ExImage
-                                                        typeimage={Exemplo01}
-                                                        type={"Casas Separadas: "}
+                                        <ModalCloseButton
+                                                color={"#000"}
+                                                fontWeight={'bold'} />
+                                        <ModalBody justifyContent={'left'}>
+                                                <TableExemple
+                                                        text={"Separado por coluna:"}
+                                                        A={"A"}
+                                                        B={"B"}
+                                                        textA={"10"}
+                                                        textB={"20"}
                                                 />
-                                                <ExImage
-                                                        typeimage={Exemplo02}
-                                                        type={"Separado por espaço em branco: "}
+                                                <TableExemple
+                                                        A={"A"}
+                                                        text={"Separado por virgula:"}
+                                                        textA={"10,10"}
+
                                                 />
-                                                <ExImage
-                                                        typeimage={Exemplo03}
-                                                        type={"Separado por aspas: "} />
-                                                <ExImage
-                                                        typeimage={Exemplo04}
-                                                        type={"Separado por ponto e vírgula: "}
+                                                <TableExemple
+                                                        A={"A"}
+                                                        text={"Separado por | :"}
+                                                        textA={"10|10"}
+
                                                 />
-                                                <ExImage
-                                                        typeimage={Exemplo05}
-                                                        type={"Separado por vírgula: "}
+                                                <TableExemple
+                                                        A={"A"}
+                                                        text={"Separado por espaço em branco:"}
+                                                        textA={"10 10"}
+
                                                 />
-                                                <ExImage
-                                                        typeimage={Exemplo06}
-                                                        type={"Separado por | :"}
+                                                <TableExemple
+                                                        A={"A"}
+                                                        text={"Separado por aspas:"}
+                                                        textA={"10''10"}
+
+                                                />
+                                                <TableExemple
+                                                        A={"A"}
+                                                        text={"Separado por ponto e vírgula:"}
+                                                        textA={"10;10"}
+
                                                 />
 
                                         </ModalBody>
