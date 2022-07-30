@@ -43,13 +43,13 @@ const UploadFilePage = () => {
                         <br />
                         <br />
                         <Stack
-                            spacing={6}
-                            flexDir={{ base: 'column', md: 'row' }}
-                            marginInlineStart={'10'}
+                            spacing={4}
+                            flexDir={'row'}
+                            marginInlineStart={'8'}
                         >
                             <CustomCSVReader />
 
-                            <Box marginInlineStart={'-10'}>
+                            <Box marginInlineStart={'-8'}>
                                 <CustomButtonDoubt />
                             </Box>
                         </Stack>
