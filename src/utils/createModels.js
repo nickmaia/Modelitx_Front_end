@@ -8,7 +8,7 @@ export let createLinearModel = async (firstDataSerie) => {
  
   try {
     const response = await axios.post(
-      "https://modelitxbackend-nickmaia-nickmaias-projects.vercel.app/api/linear", {
+      "https://modelitxbackend.vercel.app/api/linear", {
         x,
         y
       }
@@ -38,7 +38,7 @@ export let createExponencialModel = async (firstDataSerie) => {
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
 
   const response = await axios.post(
-    "https://modelitxbackend-nickmaia-nickmaias-projects.vercel.app/api/exponencial", {
+    "https://modelitxbackend.vercel.app/api/exponencial", {
       x,
       y
     }
@@ -64,7 +64,7 @@ export let createSigmoidModel = async (firstDataSerie) => {
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
 
   const response = await axios.post(
-    "https://modelitxbackend-nickmaia-nickmaias-projects.vercel.app/api/sigmoid", {
+    "https://modelitxbackend.vercel.app/api/sigmoid", {
       x,
       y
     }
@@ -94,7 +94,7 @@ export let createNormalModel = async (firstDataSerie) => {
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
 
   const response = await axios.post(
-    "https://modelitxbackend-nickmaia-nickmaias-projects.vercel.app/api/normal", {
+    "https://modelitxbackend.vercel.app/api/normal", {
       x,
       y
     }
@@ -122,7 +122,7 @@ export let createPolinomial2Model = async (firstDataSerie) => {
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
 
   const response = await axios.post(
-    "https://modelitxbackend-nickmaia-nickmaias-projects.vercel.app/polinomial2", {
+    "https://modelitxbackend.vercel.app/api/polinomial2", {
       x,
       y
     }
@@ -150,7 +150,7 @@ export let createPolinomial3Model = async (firstDataSerie) => {
   const y = Object.values(firstDataSerie).map(row => Number(row.y));
 
   const response = await axios.post(
-    "https://modelitxbackend-nickmaia-nickmaias-projects.vercel.app/api/polinomial3", {
+    "https://modelitxbackend.vercel.app/api/polinomial3", {
       x,
       y
     }
